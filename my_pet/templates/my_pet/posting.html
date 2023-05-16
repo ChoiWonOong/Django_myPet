@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>{{post.postname}}</title>
+</head>
+<body>
+<h1>이름 : {{post.postname}}</h1>
+<img src = "{{ post.petimage.url }}" alt="" style="width:300px; height:400px;">
+<p>{{post.contents}}</p>
+<hr>
+<a href="/my_pet/">목록</a>
+<p></p>
+<a href="/my_pet/{{post.pk}}/remove_post">삭제</a>
+</body>
+</html>
