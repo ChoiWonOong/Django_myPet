@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modify {{post.postname}}</title>
+</head>
+<body>
+<h1>Modify</h1>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  이름<br>
+  <input type="text" name="postname" value="{{post.postname}}"><br>
+  내용<br>
+  <textarea rows="10" cols="50" name="contents">{{post.contents}}</textarea><br>
+  <input type="file" name="petimage"><br>
+  <p></p>
+  <input type="submit" value="수정">
+  <p></p>
+  <a href="/my_pet/{{post.pk}}">돌아가기</a>
+</form>
+</body>
+</html>

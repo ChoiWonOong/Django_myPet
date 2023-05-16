@@ -35,4 +35,14 @@ def delete_post(request, post_id):
     if request.method == 'POST':
         post.delete()
         return redirect('/my_pet/')
-    return render(request, 'my_pet/remove_post.html ', {'Post':post})
+    return render(request, 'my_pet/remove_post.html ', {'post':post})
+
+def update_post(request, post_id):
+    post = Post.objects.get(pk = post_id)
+    if request.method =='POST':
+        post.postname = request.POST['postname']
+        post.contents = request.POST['contents']
+        post.petimage = request.POST['petimage']
+        post.save()
+        return redirect('/my_pet/')
+    return render(request, 'my_pet/update_post.html', {'post':post})

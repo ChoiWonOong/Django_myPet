@@ -7,8 +7,10 @@
 <body>
 <form method="POST">
   {% csrf_token %}
-  <h3>{{ Post.postname }} - Delete</h3>
+  <h3>{{ post.postname }} - Delete</h3>
   <button>Delete</button>
+  <p></p>
+  <a href="/my_pet/{{post.pk}}">돌아가기</a>
 </form>
 </body>
 </html>
